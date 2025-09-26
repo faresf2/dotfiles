@@ -1,0 +1,99 @@
+{
+  "layer": "top",
+  "height": 32,
+  "spacing": 5,
+  // Choose the order of the modules
+  "modules-left": [
+    "user",
+    "hyprland/workspaces",
+    "custom/spotify"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "hyprland/language",
+    "tray"
+  ],
+  "hyprland/window": {
+    "separate-outputs": false
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": "",
+      "empty": ""
+    },
+    "persistent-workspaces": {
+      "*": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  "hyprland/language": {
+    "format": " {}",
+    "format-en": "EN",
+    "format-ar": "AR"
+  },
+  "user": {
+    "format": " fares | ({work_H}:{work_M}:{work_S} ↑)",
+    "interval": 1,
+    "height": 23,
+    "width": 23,
+    "icon": true,
+    "avatar": "/home/fares/Pictures/pfp.jpg"
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "clock": {
+    "tooltip-format": "<big>{calendar}</big>",
+    "format": " {:%I:%M %p,  %a %d %b}"
+  },
+  "network": {
+    "format-wifi": "{ipaddr}",
+    "format-ethernet": "󰱔",
+    "format-disconnected": "󰱟",
+    "tooltip-format": "Connected to {essid}",
+    "tooltip-format-ethernet": "{ipaddr}"
+  },
+  "pulseaudio": {
+    "scroll-step": 5, // %, can be a float
+    "format": "{icon}  {volume}",
+    "format-muted": "shhh..",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "tooltip-format": "{volume}% volume",
+    "on-click": "pwvucontrol"
+  },
+  "custom/power": {
+    "format": "󰐥",
+    "on-click": "wlogout"
+  },
+  "image": {
+    "path": "/home/adxthya/.config/waybar/nix.svg",
+    "size": 20,
+    "interval": 5,
+    "on-click": "brave https://search.nixos.org/packages"
+  },
+  "custom/spotify": {
+    "interval": 1,
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/music.sh",
+    "on-click": "playerctl play-pause",
+    "escape": true
+  }
+}
+// vim: ft=jsonc

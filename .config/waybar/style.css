@@ -1,0 +1,207 @@
+/* Color definitions from SamuraiVim Palette */
+@define-color background #232634; /* base00 */
+@define-color foreground #f2f4f8; /* base05 */
+
+@define-color black #252525; /* base01 */
+@define-color red #ee5396; /* base08 */
+@define-color green #25be6a; /* base0B */
+@define-color yellow #f4b8e4; /* base0A (was orange, closest carbonfox is teal) */
+@define-color blue #78a9ff; /* base0D */
+@define-color violet #cba6f7; /* base0E */
+@define-color cyan #33b1ff; /* base0C */
+
+/* Additional colors for specific states */
+@define-color autumnRed #ff7eb6; /* base0F (For power button, closest to maroon) */
+@define-color fujiGray #484848; /* base03 (For disconnected/inactive states) */
+
+* {
+  font-family:
+    GeistMono Nerd Font,
+    Symbols Nerd Font;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+window#waybar {
+  background-color: alpha(@background, 0); /* base05 */
+  color: @violet;
+  font-weight: bold;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+window#waybar.termite {
+  background-color: #353535; /* base02 */
+}
+
+window#waybar.chromium {
+  background-color: #161616; /* base00 */
+  border: none;
+}
+
+button {
+  box-shadow: inset 0 -3px transparent;
+  border: none;
+  border-radius: 0;
+}
+
+#workspaces {
+  padding: 0px 5px;
+}
+
+#workspaces button {
+  all: unset;
+  padding: 0px 5px;
+  color: alpha(@foreground, 0.9);
+  transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+  color: @yellow;
+  border: none;
+  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+  color: @violet;
+  border: none;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+#workspaces button.empty {
+  color: alpha(@foreground, 0.5);
+  border: none;
+  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.empty:hover {
+  color: alpha(@yellow, 0.8);
+  border: none;
+  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease;
+}
+
+#workspaces button.empty.active {
+  color: @yellow;
+  border: none;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+#image {
+  margin: 4px 0 4px 10px;
+}
+
+#clock {
+  color: #cdd6f4;
+  font-size: 15px;
+  font-weight: bold;
+}
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#language {
+  color: #cdd6f4;
+  font-weight: bold;
+}
+#network,
+#wireplumber,
+#custom-pacman,
+#custom-power,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd {
+  padding: 0 6px;
+  color: @foreground;
+  border-radius: 15px;
+  margin: 5px 0;
+}
+
+#window,
+#workspaces {
+  margin: 0 4px;
+}
+
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 2px;
+}
+
+#pulseaudio {
+  font-size: 14;
+  color: @violet;
+  padding: 0 10px;
+}
+
+#tray {
+  padding: 0 10px;
+}
+
+#pulseaudio.muted {
+  color: @red;
+}
+
+#network {
+  font-size: 20;
+  color: @blue;
+  padding: 0 10px;
+}
+
+#network.disconnected {
+  color: @fujiGray;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+#custom-power {
+  color: @autumnRed;
+  margin-right: 5px;
+}
+
+#keyboard-state > label {
+  padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.modules-left {
+  background-color: @background;
+  border-radius: 0px 0px 10px;
+  padding: 0 10px;
+  margin: 0px 10px 5px 0px;
+}
+
+.modules-center {
+  background-color: @background;
+  border-radius: 0 0 10px 10px;
+  padding: 0 10px;
+  margin: 0px 0px 5px 0px;
+}
+
+.modules-right {
+  background-color: @background;
+  border-radius: 0 0 0 10px;
+  padding: 0 10px 0 0;
+  margin: 0px 0px 5px 10px;
+}
+
+#custom-spotify {
+  color: @green;
+  padding-right: 15px;
+}

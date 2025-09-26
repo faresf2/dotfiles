@@ -1,0 +1,26 @@
+[global]
+corner_radius=10
+origin = top-right
+offset = 10x10
+gap_size = 5
+
+font="GeistMono Nerd Font 10"
+frame_width=1
+horizontal_padding=10
+max_icon_size=64
+padding=10
+transparency = 15
+
+[urgency_low]
+    background = "#232634"
+    foreground = "#F2F4F8"
+    frame_color = "#cba6f7"
+
+[urgency_normal]
+    background = "#232634"
+    foreground = "#F2F4F8"
+    frame_color = "#cba6f7"
+[urgency_critical]
+    background = "#232634"
+    foreground = "#EE5396"
+    frame_color = "#cba6f7"
