@@ -11,7 +11,7 @@ config.bidi_enabled = true
 -- appearance
 config.window_background_opacity = .85
 config.font = wezterm.font("GeistMono Nerd Font Mono", { weight = "Regular" })
-config.font_size = 15
+config.font_size = 16
 config.color_scheme = 'rose-pine'
 config.colors = {
 	background = "black",
@@ -20,7 +20,7 @@ config.colors = {
 config.window_padding = {
 	left = 5,
 	right = 0,
-	top = 5,
+	top = 2,
 	bottom = 0,
 }
 

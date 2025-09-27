@@ -33,7 +33,7 @@ autoload -Uz compinit && compinit
 
 #aliases 
 alias nvf='fzf -m --preview="bat --color=always {}" | xargs -r nvim'
-alias ls='eza -la --group-directories-first --no-filesize --no-user --no-time --no-permissions'
+alias ls='eza -a --group-directories-first --no-filesize --no-user --no-time --no-permissions'
 alias ll='eza -alh --no-time --git --icons --group-directories-first'
 alias tree='eza -alh --tree --no-time --git --icons --group-directories-first'
 alias remove='sudo pacman -Rs'
@@ -68,6 +68,13 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls -a --color $realpath'
 bindkey -e
 bindkey ^p history-search-backward
 bindkey ^n history-search-forward
+
+# Custom keybindings for word navigation
+bindkey '\e[1;5C' forward-word
+bindkey '\e[1;5D' backward-word
+
+# Bind Ctrl+Backspace to delete the previous word
+bindkey '^H' backward-kill-word
 
 # makes hidden files show in completion
 setopt globdots
