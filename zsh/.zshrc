@@ -10,11 +10,10 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Oh-my-posh
-eval "$(oh-my-posh init zsh --config /home/fares/.config/ohmyposh/omp.json)"
 
 # Source/Load Catppuccin syntax highlighting
-source ~/.zsh-theme/catppuccin_mocha-zsh-syntax-highlighting.zsh
+# source ~/zsh/.zsh-theme/catppuccin_mocha-zsh-syntax-highlighting.zsh
+source ~/zsh/.zsh-theme/rose-pine.zsh
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -47,7 +46,7 @@ alias grep='grep --color=auto'
 
 # History
 HISTSIZE=5000
-HISTFILE=~/.zsh_history
+HISTFILE=/home/fares/zsh/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 setopt appendhistory
@@ -78,4 +77,10 @@ bindkey '^H' backward-kill-word
 
 # makes hidden files show in completion
 setopt globdots
+
+# Oh-my-posh
+# eval "$(oh-my-posh init zsh --config /home/fares/.config/ohmyposh/catppuccin-mocha.omp.json)"
+# eval "$(oh-my-posh init zsh --config /home/fares/.config/ohmyposh/tokyonight-storm.omp.json)"
+eval "$(oh-my-posh init zsh --config /home/fares/.config/ohmyposh/huvix.omp.json)"
+# eval "$(oh-my-posh init zsh --config /home/fares/.config/ohmyposh/zash.omp.json)"
 

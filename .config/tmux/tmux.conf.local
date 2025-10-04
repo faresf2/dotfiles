@@ -16,6 +16,9 @@
 #   - false (default)
 tmux_conf_preserve_stock_bindings=false
 
+# Make sessions index start at 0
+bind-key s choose-tree -ZsK '#{?#{e|<:#{line},9},#{e|+:1,#{line}},#{?#{e|<:#{line},35},M-#{a:#{e|+:97,#{e|-:#{line},9}}},}}'
+
 # Instant switch to a new tmux session directory that exist
 bind-key -r f run-shell "tmux new ~/.local/bin/tmux-sessionizer"
 bind-key n command-prompt "new-session -s '%%'"

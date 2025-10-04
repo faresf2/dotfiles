@@ -15,18 +15,19 @@
     "network",
     "pulseaudio",
     "hyprland/language",
-    "tray"
+    "tray",
+    "custom/power"
   ],
   "hyprland/window": {
     "separate-outputs": false
   },
   "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "active": "",
-      "default": "",
-      "empty": ""
-    },
+    "format": "{name}",
+    // "format-icons": {
+    //   "active": "",
+    //   "default": "",
+    //   "empty": ""
+    // },
     "persistent-workspaces": {
       "*": [
         1,
@@ -37,32 +38,31 @@
       ]
     }
   },
+
   "hyprland/language": {
     "format": " {}",
     "format-en": "EN",
-    "format-ar": "AR"
+    "format-ar": "AR",
+    "on-click": "hyprctl switchxkblayout current next"
   },
   "user": {
-    "format": " fares | ({work_H}:{work_M}:{work_S} ↑)",
+    "format": "({work_H}:{work_M}:{work_S} ↑)",
     "interval": 1,
     "height": 23,
-    "width": 23,
-    "icon": true,
-    "avatar": "/home/fares/Pictures/pfp.jpg"
+    "width": 23
   },
   "tray": {
-    "spacing": 10
+    "spacing": 5
   },
   "clock": {
     "tooltip-format": "<big>{calendar}</big>",
     "format": " {:%I:%M %p,  %a %d %b}"
   },
   "network": {
-    "format-wifi": "{ipaddr}",
-    "format-ethernet": "󰱔",
+    "format-ethernet": "⇣{bandwidthDownBytes}",
+    "interval": 2,
     "format-disconnected": "󰱟",
-    "tooltip-format": "Connected to {essid}",
-    "tooltip-format-ethernet": "{ipaddr}"
+    "tooltip-format-ethernet": "{ipaddr}"
   },
   "pulseaudio": {
     "scroll-step": 5, // %, can be a float
@@ -82,17 +82,11 @@
     "format": "󰐥",
     "on-click": "wlogout"
   },
-  "image": {
-    "path": "/home/adxthya/.config/waybar/nix.svg",
-    "size": 20,
-    "interval": 5,
-    "on-click": "brave https://search.nixos.org/packages"
-  },
   "custom/spotify": {
     "interval": 1,
     "return-type": "json",
     "exec": "~/.config/waybar/scripts/music.sh",
-    "on-click": "playerctl play-pause",
+    "on-click": "playerctl --player=spotify play-pause",
     "escape": true
   }
 }
