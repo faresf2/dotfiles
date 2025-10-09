@@ -22,6 +22,18 @@ return {
 
 		-- enable mason and configure icons
 		mason.setup({
+			ensure_installed = {
+				-- Go tools
+				"golangci-lint", -- Linter
+				"gofumpt", -- Formatter
+				"goimports-reviser", -- Formatter for imports
+				"delve", -- Debugger
+
+				-- Other example tools
+				"stylua", -- Lua formatter
+				"shellcheck", -- Shell script linter
+				"clangd",
+			},
 			ui = {
 				icons = {
 					package_installed = "✓",
@@ -47,7 +59,6 @@ return {
 				"emmet_language_server",
 				-- "eslint",
 				"marksman",
-				"golangci-lint",
 			},
 		})
 

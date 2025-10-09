@@ -18,6 +18,7 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				go = { "gofumpt", "goimports-reviser", "golines" },
+				cpp = { "clang-format" },
 			},
 
 			format_on_save = {
