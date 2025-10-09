@@ -1,0 +1,33 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/rose_pine.toml"
+]
+
+[window]
+
+opacity = 0.95
+blur = true
+
+padding.x = 7
+padding.y = 7
+
+decorations = "Full"
+decorations_theme_variant = "Dark"
+
+[font]
+
+normal.family = "IosevkaTerm Nerd Font"
+normal.style = "SemiBold"
+bold.family = "IosevkaTerm Nerd Font"
+italic.family = "IosevkaTerm Nerd Font"
+bold_italic.family = "IosevkaTerm Nerd Font"
+size = 16.0
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style = { shape = "Block" , blinking = "On" }
+
+[terminal]
+shell = "zsh"
