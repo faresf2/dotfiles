@@ -27,27 +27,9 @@ window#waybar {
   background-color: alpha(@background, 1); /* base05 */
   color: @violet;
   font-weight: bold;
-  /* transition-property: background-color; */
-  /* transition-duration: 0.5s; */
   padding: 0;
   margin: 0;
 }
-
-/* window#waybar.hidden { */
-/*   opacity: 0.2; */
-/*   padding: 0; */
-/*   margin: 0; */
-/* } */
-/**/
-/* window#waybar.termite { */
-/*   background-color: #353535;  */
-/* } */
-/**/
-/* window#waybar.chromium { */
-/*   background-color: #161616;  */
-/*   border: none; */
-/* } */
-
 button {
   box-shadow: inset 0 -3px transparent;
   border: none;
@@ -55,20 +37,18 @@ button {
 }
 
 #workspaces {
-  padding: 0px 0px;
+  padding: 0px 7px;
 }
 
 #workspaces button {
-  /* all: unset; */
-  padding: 0px 5px;
-  color: alpha(@foreground, 0.9);
+  padding: 0px 10px;
+  color: alpha(@foreground, 1);
   transition: all 0.2s ease;
 }
 
 #workspaces button:hover {
   color: #fff;
   border: none;
-  /* text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5); */
   transition: all 0.2s ease;
   background-color: @yellow;
 }
@@ -76,27 +56,23 @@ button {
 #workspaces button.active {
   color: #fff;
   border: none;
-  /* text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5); */
   background-color: @violet;
 }
 
 #workspaces button.urgent {
   color: #fff;
   border: none;
-  /* text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5); */
   animation: blink 1s steps(2, end) infinite;
 }
 
 #workspaces button.empty {
-  color: alpha(@foreground, 0.5);
+  color: alpha(@foreground, 0.3);
   border: none;
-  /* text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.2); */
 }
 
 #workspaces button.empty:hover {
   color: #fff;
   border: none;
-  /* text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5); */
   transition: all 0.2s ease;
   background-color: @yellow;
 }
@@ -104,13 +80,13 @@ button {
 #workspaces button.empty.active {
   color: #fff;
   border: none;
-  /* text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5); */
 }
 
 #clock {
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
+  margin-left: -40px;
 }
 #cpu,
 #memory,
@@ -119,6 +95,7 @@ button {
 #backlight,
 #language {
   color: #fff;
+  font-size: 16px;
   font-weight: bold;
 }
 #wireplumber,
@@ -128,13 +105,6 @@ button {
 #mode,
 #idle_inhibitor,
 #scratchpad,
-/* #mpd { */
-/*   padding: 0 6px; */
-/*   color: @foreground; */
-/*   border-radius: 15px; */
-/*   margin: 5px 0; */
-/* } */
-
 #window,
 .modules-left > widget:first-child > #workspaces {
   margin-left: 2px;
@@ -143,11 +113,11 @@ button {
 #pulseaudio {
   font-size: 14;
   color: @violet;
-  padding: 0 10px;
+  padding: 0 7px;
 }
 
 #tray {
-  padding: 0 10px;
+  padding: 0 7px;
 }
 
 #pulseaudio.muted {
@@ -157,13 +127,15 @@ button {
 #network {
   font-size: 15px;
   color: @violet;
-  padding: 0 0;
+  padding: 0 7px;
   margin: 0;
 }
 
 #custom-power {
   color: @violet;
-  margin-right: 5px;
+  padding: 0 7px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 #keyboard-state > label {
@@ -191,7 +163,7 @@ button {
 .modules-right {
   background-color: @background;
   border-radius: 0 0 0 10px;
-  padding: 0 10px 0 0;
+  padding: 0 5px 0 0;
   margin: 0px 0px 0px 0px;
 }
 

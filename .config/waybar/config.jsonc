@@ -1,21 +1,20 @@
 {
   "layer": "top",
-  "height": 32,
-  "spacing": 5,
-  // Choose the order of the modules
+  "height": 28,
+  "spacing": 0,
   "modules-left": [
     "user",
     "hyprland/workspaces",
     "custom/spotify"
   ],
   "modules-center": [
-    "clock"
+    "clock",
+        "hyprland/language"
   ],
   "modules-right": [
     "network",
     "pulseaudio",
-    "hyprland/language",
-    "tray",
+        "tray",
     "custom/power"
   ],
   "hyprland/window": {
@@ -23,11 +22,6 @@
   },
   "hyprland/workspaces": {
     "format": "{name}",
-    // "format-icons": {
-    //   "active": "",
-    //   "default": "",
-    //   "empty": ""
-    // },
     "persistent-workspaces": {
       "*": [
         1,
@@ -40,7 +34,7 @@
   },
 
   "hyprland/language": {
-    "format": " {}",
+    "format": "{}",
     "format-en": "EN",
     "format-ar": "AR",
     "on-click": "hyprctl switchxkblayout current next"
@@ -52,11 +46,11 @@
     "width": 23
   },
   "tray": {
-    "spacing": 5
+    "spacing": 14
   },
   "clock": {
     "tooltip-format": "<big>{calendar}</big>",
-    "format": " {:%I:%M %p,  %a %d %b}"
+    "format": "{:%I:%M %p | %a %d %b} | "
   },
   "network": {
     "format-ethernet": "⇣{bandwidthDownBytes}",
