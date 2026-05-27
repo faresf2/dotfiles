@@ -87,37 +87,31 @@ button {
   font-size: 16px;
   font-weight: bold;
   margin-left: -40px;
+  background-color: transparent;
 }
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
 #language {
   color: #fff;
   font-size: 16px;
   font-weight: bold;
 }
-#wireplumber,
-#custom-pacman,
-#custom-power,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
 #window,
 .modules-left > widget:first-child > #workspaces {
   margin-left: 2px;
 }
 
 #pulseaudio {
-  font-size: 14;
-  color: @violet;
+  font-size: 14px;
+  color: @yellow;
+  padding: 0 7px;
+}
+
+#custom-expand-icon {
+  color: @blue;
   padding: 0 7px;
 }
 
 #tray {
-  padding: 0 7px;
+  margin: 0 7px;
 }
 
 #pulseaudio.muted {
@@ -132,18 +126,10 @@ button {
 }
 
 #custom-power {
-  color: @violet;
-  padding: 0 7px;
+  color: @red;
+  padding: 0 7px 0 3px;
   font-size: 18px;
   font-weight: 600;
-}
-
-#keyboard-state > label {
-  padding: 0 5px;
-}
-
-#keyboard-state > label.locked {
-  background: rgba(0, 0, 0, 0.2);
 }
 
 .modules-left {

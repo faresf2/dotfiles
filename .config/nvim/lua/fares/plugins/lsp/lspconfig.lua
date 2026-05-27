@@ -147,15 +147,6 @@ return {
 		})
 		vim.lsp.enable("emmet_ls")
 
-		vim.lsp.config("clangd", {
-			cmd = {
-				"clangd",
-				"--compile-arg=-std=c++17",
-				"--compile-arg=-I/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1",
-			},
-			filetypes = { "c", "cpp" },
-		})
-		vim.lsp.enable("clangd")
 		-- ts_ls (TypeScript/JavaScript)
 		vim.lsp.config("ts_ls", {
 			filetypes = {

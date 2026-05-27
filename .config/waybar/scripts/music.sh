@@ -4,13 +4,13 @@ class=$(playerctl metadata --player=spotify --format '{{lc(status)}}')
 icon=""
 
 if [[ $class == "playing" ]]; then
-  info=$(playerctl metadata --player=spotify --format '{{title}}' | sed -E 's/[-(].*//')
+  info=$(playerctl metadata --player=spotify --format '{{title}}' | sed -E 's/[-(].*//' | sed 's/"/\\"/g')
   if [[ ${#info} > 40 ]]; then
     info=$(echo $info | cut -c1-40)"..."
   fi
   text=$icon" "$info
 elif [[ $class == "paused" ]]; then
-  info=$(playerctl metadata --player=spotify --format '{{title}}' | sed -E 's/[-(].*//')
+  info=$(playerctl metadata --player=spotify --format '{{title}}' | sed -E 's/[-(].*//' | sed 's/"/\\"/g')
   if [[ ${#info} > 40 ]]; then
     info=$(echo $info | cut -c1-40)"..."
   fi

@@ -1,6 +1,9 @@
 ---@diagnostic disable: missing-fields
 return {
 	"folke/noice.nvim",
+	cond = function()
+		return not vim.g.vscode
+	end,
 	dependencies = {
 		"MunifTanjim/nui.nvim",
 	},

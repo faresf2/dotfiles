@@ -1,3 +1,9 @@
 export PATH=$PATH:/home/fares/.local/bin
 export EDITOR=nvim
-
+export PATH="$HOME/flutter-sdk/flutter/bin:$PATH"
+export CHROME_EXECUTABLE="/usr/bin/helium-browser"
+export _JAVA_AWT_WM_NONREPARENTING=1
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt

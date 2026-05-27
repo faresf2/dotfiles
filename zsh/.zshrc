@@ -30,7 +30,7 @@ zinit snippet OMZP::archlinux
 # Load completions
 autoload -Uz compinit && compinit
 
-#aliases 
+#aliases
 alias nvf='fzf -m --preview="bat --color=always {}" | xargs -r nvim'
 alias ls='eza -a --group-directories-first --no-filesize --no-user --no-time --no-permissions'
 alias ll='eza -alh --no-time --git --icons --group-directories-first'
@@ -43,6 +43,7 @@ alias vim='nvim'
 alias svim='sudoedit'
 alias c='clear'
 alias grep='grep --color=auto'
+alias nodeserver='npx http-server -c-1 -o -p 8080'
 
 # History
 HISTSIZE=5000
@@ -84,3 +85,13 @@ setopt globdots
 eval "$(oh-my-posh init zsh --config /home/fares/.config/ohmyposh/huvix.omp.json)"
 # eval "$(oh-my-posh init zsh --config /home/fares/.config/ohmyposh/zash.omp.json)"
 
+
+export PATH=$PATH:/home/fares/.local/bin
+export EDITOR=nvim
+export PATH="$HOME/flutter-sdk/flutter/bin:$PATH"
+export CHROME_EXECUTABLE="/usr/bin/helium-browser"
+export _JAVA_AWT_WM_NONREPARENTING=1
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt

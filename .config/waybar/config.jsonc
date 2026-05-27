@@ -9,13 +9,13 @@
   ],
   "modules-center": [
     "clock",
-        "hyprland/language"
+    "hyprland/language"
   ],
   "modules-right": [
     "network",
     "pulseaudio",
-        "tray",
-    "custom/power"
+    "group/tray-expander",
+    "custom/power",
   ],
   "hyprland/window": {
     "separate-outputs": false
@@ -30,13 +30,17 @@
         4,
         5
       ]
-    }
+    },
+    "ignore-workspaces": [
+            "secret"
+        ]
   },
 
   "hyprland/language": {
     "format": "{}",
     "format-en": "EN",
     "format-ar": "AR",
+    "swap-icon-label": false,
     "on-click": "hyprctl switchxkblayout current next"
   },
   "user": {
@@ -45,10 +49,25 @@
     "height": 23,
     "width": 23
   },
+    "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "tray-group-item"
+    },
+    "modules": ["custom/expand-icon", "tray"]
+  },
+  "custom/expand-icon": {
+    "format": " ",
+    "tooltip": false
+  },
   "tray": {
-    "spacing": 14
+    "icon-size": 15,
+    "spacing": 7,
+    "tooltip": false
   },
   "clock": {
+    "interval": 1,
     "tooltip-format": "<big>{calendar}</big>",
     "format": "{:%I:%M %p | %a %d %b} | "
   },
@@ -79,8 +98,9 @@
   "custom/spotify": {
     "interval": 1,
     "return-type": "json",
-    "exec": "~/.config/waybar/scripts/music.sh",
-    "on-click": "playerctl --player=spotify play-pause",
+    "exec": "~/.config/waybar/scripts/music2.sh",
+    "on-click": "playerctl --player=spotify play-pause && sleep 0.1 && pkill -SIGRTMIN+8 waybar",
+    "signal": 8,
     "escape": true
   }
 }
