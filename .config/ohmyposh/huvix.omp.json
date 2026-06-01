@@ -15,10 +15,10 @@
         {
           "foreground": "#56B6C2",
           "properties": {
-            "style": "agnoster_short"
+            "style": "full"
           },
           "style": "plain",
-          "template": "{{ .Path }} ",
+          "template": "{{ $parts := splitList \"/\" .Path }}{{ if le (len $parts) 3 }}{{ .Path }}{{ else }}{{ first $parts }}/.../{{ last $parts }}{{ end }} ",
           "type": "path"
         },
         {
