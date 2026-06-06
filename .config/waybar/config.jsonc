@@ -15,13 +15,15 @@
     "network",
     "pulseaudio",
     "group/tray-expander",
-    "custom/power",
+    "custom/power"
   ],
-  "hyprland/window": {
-    "separate-outputs": false
+
+  "user": {
+    "format": "({work_H}:{work_M}:{work_S} ↑)",
+    "interval": 1,
   },
+
   "hyprland/workspaces": {
-    "format": "{name}",
     "persistent-workspaces": {
       "*": [
         1,
@@ -36,47 +38,34 @@
         ]
   },
 
-  "hyprland/language": {
-    "format": "{}",
-    "format-en": "EN",
-    "format-ar": "AR",
-    "swap-icon-label": false,
-    "on-click": "hyprctl switchxkblayout current next"
-  },
-  "user": {
-    "format": "({work_H}:{work_M}:{work_S} ↑)",
+  "custom/spotify": {
     "interval": 1,
-    "height": 23,
-    "width": 23
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/spotify_control.sh",
+    "on-click": "playerctl --player=spotify play-pause && sleep 0.1 && pkill -SIGRTMIN+8 waybar",
+    "signal": 8,
+    "escape": true
   },
-    "group/tray-expander": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 300,
-      "children-class": "tray-group-item"
-    },
-    "modules": ["custom/expand-icon", "tray"]
-  },
-  "custom/expand-icon": {
-    "format": " ",
-    "tooltip": false
-  },
-  "tray": {
-    "icon-size": 15,
-    "spacing": 7,
-    "tooltip": false
-  },
+
   "clock": {
     "interval": 1,
     "tooltip-format": "<big>{calendar}</big>",
     "format": "{:%I:%M %p | %a %d %b} | "
   },
+
+  "hyprland/language": {
+    "format-en": "EN",
+    "format-ar": "AR",
+    "on-click": "hyprctl switchxkblayout current next"
+  },
+
   "network": {
     "format-ethernet": "⇣{bandwidthDownBytes}",
     "interval": 2,
     "format-disconnected": "󰱟",
     "tooltip-format-ethernet": "{ipaddr}"
   },
+
   "pulseaudio": {
     "scroll-step": 5, // %, can be a float
     "format": "{icon}  {volume}",
@@ -89,19 +78,35 @@
       ]
     },
     "tooltip-format": "{volume}% volume",
-    "on-click": "pwvucontrol"
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
+
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "tray-group-item"
+    },
+    "modules": [
+      "custom/expand-icon",
+      "tray"
+    ]
+  },
+
+  "custom/expand-icon": {
+    "format": " ",
+    "tooltip": false
+  },
+
+  "tray": {
+    "icon-size": 15,
+    "spacing": 7,
+    "tooltip": false
+  },
+
   "custom/power": {
     "format": "󰐥",
     "on-click": "wlogout"
-  },
-  "custom/spotify": {
-    "interval": 1,
-    "return-type": "json",
-    "exec": "~/.config/waybar/scripts/music2.sh",
-    "on-click": "playerctl --player=spotify play-pause && sleep 0.1 && pkill -SIGRTMIN+8 waybar",
-    "signal": 8,
-    "escape": true
   }
 }
 // vim: ft=jsonc

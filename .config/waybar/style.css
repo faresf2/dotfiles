@@ -1,18 +1,12 @@
-/* Color definitions from SamuraiVim Palette */
-@define-color background #232634; /* base00 */
-@define-color foreground #f2f4f8; /* base05 */
+@define-color background #232634;
+@define-color foreground #f2f4f8;
 
-@define-color black #252525; /* base01 */
-@define-color red #ee5396; /* base08 */
-@define-color green #25be6a; /* base0B */
-@define-color yellow #f4b8e4; /* base0A (was orange, closest carbonfox is teal) */
-@define-color blue #78a9ff; /* base0D */
-@define-color violet #cba6f7; /* base0E */
-@define-color cyan #33b1ff; /* base0C */
-
-/* Additional colors for specific states */
-@define-color autumnRed #ff7eb6; /* base0F (For power button, closest to maroon) */
-@define-color fujiGray #484848; /* base03 (For disconnected/inactive states) */
+@define-color black #252525;
+@define-color reddish #ee5396;
+@define-color green #25be6a;
+@define-color pink #f4b8e4;
+@define-color lightblue #78a9ff;
+@define-color lavender #cba6f7;
 
 * {
   font-family:
@@ -25,7 +19,7 @@
 
 window#waybar {
   background-color: alpha(@background, 1); /* base05 */
-  color: @violet;
+  color: @lavender;
   font-weight: bold;
   padding: 0;
   margin: 0;
@@ -50,13 +44,13 @@ button {
   color: #fff;
   border: none;
   transition: all 0.2s ease;
-  background-color: @yellow;
+  background-color: @pink;
 }
 
 #workspaces button.active {
   color: #fff;
   border: none;
-  background-color: @violet;
+  background-color: @lavender;
 }
 
 #workspaces button.urgent {
@@ -74,7 +68,7 @@ button {
   color: #fff;
   border: none;
   transition: all 0.2s ease;
-  background-color: @yellow;
+  background-color: @pink;
 }
 
 #workspaces button.empty.active {
@@ -101,12 +95,12 @@ button {
 
 #pulseaudio {
   font-size: 14px;
-  color: @yellow;
+  color: @pink;
   padding: 0 7px;
 }
 
 #custom-expand-icon {
-  color: @blue;
+  color: @lightblue;
   padding: 0 7px;
 }
 
@@ -115,18 +109,18 @@ button {
 }
 
 #pulseaudio.muted {
-  color: @red;
+  color: @reddish;
 }
 
 #network {
   font-size: 15px;
-  color: @violet;
+  color: @lavender;
   padding: 0 7px;
   margin: 0;
 }
 
 #custom-power {
-  color: @red;
+  color: @reddish;
   padding: 0 7px 0 3px;
   font-size: 18px;
   font-weight: 600;
@@ -160,12 +154,12 @@ button {
 
 @keyframes blink {
   0% {
-    background-color: @red;
+    background-color: @reddish;
   }
   50% {
     background-color: transparent;
   }
   100% {
-    background-color: @red;
+    background-color: @reddish;
   }
 }
