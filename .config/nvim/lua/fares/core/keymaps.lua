@@ -37,15 +37,15 @@ map("x", "<leader>p", [["_dP]])
 map("v", "p", '"_dp', opts)
 
 -- delete without copying to clipboard to keep clean
-map({"n", "v"}, "<leader>d", [["_d]])
+map({ "n", "v" }, "<leader>d", [["_d]])
 
 -- exist insert mode with ctrl+c and also do :nohl using ctrl+c
 map("i", "<C-c>", "<Esc>")
 map("n", "<C-c>", ":nohl<CR>", { desc = "Clear Search hl", silent = true })
 
 -- insert new line in normal mode using enter and shift+enter
-map('n', '<CR>', 'm`o<Esc>``')
-map('n', '<S-CR>', 'm`O<Esc>``')
+map("n", "<CR>", "m`o<Esc>``")
+map("n", "<S-CR>", "m`O<Esc>``")
 
 -- format code with leader+f
 map("n", "<leader>f", vim.lsp.buf.format)
@@ -57,13 +57,18 @@ map("n", "Q", "<nop>")
 map("n", "x", '"_x', opts)
 
 -- replace word under cursor gobally
-map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word cursor is on globally" })
+map(
+	"n",
+	"<leader>s",
+	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+	{ desc = "Replace word cursor is on globally" }
+)
 
 -- Hightlight yanking
 vim.api.nvim_create_autocmd("TextYankPost", {
-    desc = "Highlight when yanking (copying) text",
-    group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-    callback = function()
-        vim.hl.on_yank()
-    end,
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.hl.on_yank()
+	end,
 })
